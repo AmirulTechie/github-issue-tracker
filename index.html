@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Issue Tracker - Login</title>
+    <!-- daisyUi and Tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awsome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Geist font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <!-- styles -->
+     <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="flex justify-center items-center min-h-screen bg-[##F8FAFC]">
+    <section class=" text-center  bg-white border-base-300 rounded-box border p-6 shadow-xl flex flex-col justify-center items-center">
+        <div class="flex flex-col justify-center items-center">
+        <img class="mt-5" src="./assets/github-logo.png" alt="">
+        <h2 class="text-2xl font-bold mt-5 mx-20">GitHub Issues Tracker</h2>
+        <p class="mb-6">Sign in to manage your issues</p>
+        </div>
+        <fieldset class="fieldset w-full">
+            <label class="label">Username</label>
+            <input id="input-user" type="text" class="input w-full" placeholder="Enter Username" value="admin"/>
+            <p class="text-primary text-left font-semibold mb-4">Default: admin</p>
+        
+            <label class="label">Password</label>
+            <input id="input-pass" type="password" class="input w-full" placeholder="Password" value="admin123"/>
+            <p class="text-primary text-left font-semibold mb-4">Default: admin123</p>
+            <button class="btn btn-primary mt-4">Sign In</button>
+        </fieldset>
+        <br>
+        <hr class="w-full">
+        <br>
+        <p class="text-[#64748B] text-sm">Demo Credentials:</p>
+        <div class="bg-[#F8FAFC] w-8/12 p-5 border border-[#F8FAFC] rounded-sm">
+            <p class="text-sm"><span class="font-semibold">Username:</span> admin</p>
+            <p class="text-sm"><span class="font-semibold">Password:</span> admin123</p>
+            
+        </div>
+    </section>
+    <script src="scripts/login.js"></script>
+</body>
+</html>
