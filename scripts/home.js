@@ -144,7 +144,21 @@ const setupFilters = () => {
 
 const setupSearch = () => {
     const searchInput = document.getElementById('search-input');
-    searchInput.addEventListener('input', applyFiltersAndSearch);
+    searchInput.addEventListener('input', async (e) => {
+        const searchText = e.target.value;
+        if (!searchText) return loadIssues();
+
+        toggleSpinner(true);
+        try {
+            const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`);
+            const data = await res.json();
+            showIssues(data.data);
+        } catch (error) {
+            console.error(error);
+        } finally {
+            toggleSpinner(false);
+        }
+    });
 }
 
 loadIssues();
