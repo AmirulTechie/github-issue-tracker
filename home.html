@@ -64,9 +64,26 @@
                     <p class="text-sm">Closed</p>
                 </div>
             </div>
+            <!-- <button class="btn btn-primary" onclick="my_modal_5.showModal()">Open Issue Modal</button> -->
+            
+            <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                <div class="modal-box max-w-2xl">
+                <div id="details-container"> </div>
+                        <div class="modal-action m-0">
+                            <form method="dialog">
+                                <button class="btn btn-primary">Close</button>
+                            </form>
+                        </div>
+                </div>
+            </dialog>
+        <section id="spinner" class="flex justify-center items-center mt-16">
+        <span class="loading loading-spinner loading-xl"></span>
+        </section>
         <section id="cards-section" class=" bg-gray-100 p-2 md:p-4 shadow-sm  mt-5 rounded-sm grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
             
         </section>
+        </section>
+   
    </main>
     <script src="scripts/home.js"></script>
 </body>
