@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Github Issue Tracker - Login</title>
+    <title>Github Issue Tracker - Home</title>
     <!-- daisyUi and Tailwind -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -21,7 +21,53 @@
 </head>
 
 <body class="">
-   
+   <nav>
+    <div class="navbar bg-base-100 shadow-sm justify-between px-14 flex-col md:flex-row ">
+        <div class="mb-4 md:mb-0">
+            <a class="flex justify-center items-center gap-2 text-xl"><img src="./assets/github-logo.png" alt="" width="36px"><span class="text-sm md:text-xl">GitHub Issues Tracker</span></a>
+        </div>
+        <div class="flex gap-2">
+            <label class="input">
+                <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </g>
+                </svg>
+                <input type="search" required placeholder="Search" />
+            </label>
+            <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> New Issue</button>
+        </div>
+    </div>
+   </nav>
+   <main>
+        <section class="bg-white border-base-300 rounded-md shadow-md md:w-11/12 mx-auto mt-16 p-4 flex flex-col md:flex-row gap-4">
+            <button class="btn btn-primary">All</button>
+            <button class="btn">Open</button>
+            <button class="btn">Closed</button>
+        </section>
+        <section class="bg-white border-base-300 rounded-md shadow-md md:w-11/12 mx-auto mt-5 p-4 space-x-3">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex gap-4">
+                    <div>
+                    <img src="./assets/Aperture.png" alt="">
+                    </div>
+                    <div>
+                    <h3 class="font-semibold text-xl"><span>50</span> Issues</h3>
+                    <p class="text-[#64748B] text-sm">Track and manage your project issues</p>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center gap-2">
+                    <img src="./assets/green-dot.png" alt="">
+                    <p class="text-sm">Open</p>
+                    <img src="./assets/purple-dot.png" alt="">
+                    <p class="text-sm">Closed</p>
+                </div>
+            </div>
+        <section id="cards-section" class=" bg-gray-100 p-2 md:p-4 shadow-sm  mt-5 rounded-sm grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+            
+        </section>
+   </main>
     <script src="scripts/home.js"></script>
 </body>
 
