@@ -114,10 +114,12 @@ const showIssues = (issues) => {
 }
 
 const applyFiltersAndSearch = () => {
-    const searchTerm = document.getElementById('search-input').value.toLowerCase();
+    const searchTerm = document.getElementById('search-input').value.toLowerCase().trim();
 
     const filtered = allIssues.filter(issue => {
-        const matchesSearch = issue.title.toLowerCase().includes(searchTerm) ||
+        const matchesSearch = 
+            issue.title.toLowerCase().includes(searchTerm) ||
+            issue.description.toLowerCase().includes(searchTerm) ||
             issue.id.toString().includes(searchTerm);
 
         const matchesFilter = (currentFilter === 'all') ||
@@ -136,7 +138,12 @@ const setupFilters = () => {
         btn.addEventListener('click', (e) => {
             filterButtons.forEach(b => b.classList.remove('btn-primary'));
             e.target.classList.add('btn-primary');
-            currentFilter = e.target.innerText.toLowerCase();
+            
+            const btnText = e.target.innerText.toLowerCase();
+            if (btnText.includes('all')) currentFilter = 'all';
+            else if (btnText.includes('open')) currentFilter = 'open';
+            else if (btnText.includes('closed')) currentFilter = 'closed';
+            
             applyFiltersAndSearch();
         });
     });
@@ -144,20 +151,8 @@ const setupFilters = () => {
 
 const setupSearch = () => {
     const searchInput = document.getElementById('search-input');
-    searchInput.addEventListener('input', async (e) => {
-        const searchText = e.target.value;
-        if (!searchText) return loadIssues();
-
-        toggleSpinner(true);
-        try {
-            const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`);
-            const data = await res.json();
-            showIssues(data.data);
-        } catch (error) {
-            console.error(error);
-        } finally {
-            toggleSpinner(false);
-        }
+    searchInput.addEventListener('input', () => {
+        applyFiltersAndSearch();
     });
 }
 
